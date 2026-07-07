@@ -18,12 +18,12 @@ python ~/.config/opencode/skills/sc-to-shopee/sc_to_shopee.py <來源訂單.xlsx
 |------|------|
 | `來源訂單.xlsx` | 官網後台匯出的訂單 Excel（必填） |
 | `蝦皮格式.xlsx` | 蝦皮匯入格式範本檔（必填） |
-| `輸出檔名.xlsx` | 自訂輸出檔名（選填，預設自動產生） |
+| `輸出檔名.xlsx` | 自訂輸出檔名（選填，預設為 `蝦皮格式_<原始檔名>.xlsx`） |
 
 ### 範例
 ```powershell
 python ~/.config/opencode/skills/sc-to-shopee/sc_to_shopee.py 訂單.xlsx 蝦皮格式.xlsx
-python ~/.config/opencode/skills/sc-to-shopee/sc_to_shopee.py 訂單.xlsx 蝦皮格式.xlsx 蝦皮訂單_0710.xlsx
+python ~/.config/opencode/skills/sc-to-shopee/sc_to_shopee.py 訂單.xlsx 蝦皮格式.xlsx 蝦皮格式_訂單_自訂.xlsx
 ```
 
 ## 依賴套件

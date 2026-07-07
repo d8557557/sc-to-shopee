@@ -6,7 +6,7 @@
 用法:
   python sc_to_shopee.py <來源訂單.xlsx> <蝦皮格式.xlsx> [輸出檔名.xlsx]
 
-若未指定輸出檔名，自動產生「蝦皮訂單_<日期>.xlsx」
+若未指定輸出檔名，自動產生「蝦皮格式_<原始檔名>.xlsx」
 """
 import openpyxl, sys, os, re, io, shutil
 from datetime import datetime
@@ -299,14 +299,14 @@ def main():
         print()
         print("範例:")
         print("  python sc_to_shopee.py 訂單.xlsx 蝦皮格式.xlsx")
-        print("  python sc_to_shopee.py 訂單.xlsx 蝦皮格式.xlsx 蝦皮訂單_0710.xlsx")
+        print("  python sc_to_shopee.py 訂單.xlsx 蝦皮格式.xlsx 蝦皮格式_訂單_自訂.xlsx")
         sys.exit(1)
 
     src_file = sys.argv[1]
     tpl_file = sys.argv[2]
     out_file = sys.argv[3] if len(sys.argv) > 3 else (
         os.path.join(os.path.dirname(src_file),
-                     f"蝦皮訂單_{datetime.now().strftime('%Y%m%d')}.xlsx")
+                     f"蝦皮格式_{os.path.splitext(os.path.basename(src_file))[0]}.xlsx")
     )
 
     if not os.path.exists(src_file):
